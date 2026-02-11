@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fairytale Test Site</title>
+
+<style>
+/* =========================
+   THIS IS A TEST WEBSITE
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87ceeb, #f7e8a4);
+    text-align: center;
+}
+
+header {
+    background: #2e8b57;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.test-banner {
+    background: #ffcc00;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #2e8b57;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #3cb371;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="test-banner">
+    ⚠️ THIS IS A TEST / EXAMPLE WEBSITE FOR LEARNING PURPOSES ⚠️
+</div>
+
+<header>
+    <h1>Fairytale Interactive Test Site</h1>
+    <p>A fun HTML, CSS & JavaScript example</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Meet the Characters</h2>
+        <p>Click the button to reveal a surprise message!</p>
+        <button onclick="showMessage()">Reveal Message</button>
+        <p id="message" class="hidden"></p>
+    </div>
+
+    <div class="card">
+        <h2>Choose a Scene</h2>
+        <button onclick="changeScene('swamp')">Swamp</button>
+        <button onclick="changeScene('castle')">Castle</button>
+        <button onclick="changeScene('bakery')">Bakery</button>
+        <p id="sceneText"></p>
+    </div>
+
+    <div class="card">
+        <h2>Interactive Counter</h2>
+        <p>Click the button to increase magic points!</p>
+        <button onclick="increaseMagic()">Add Magic ✨</button>
+        <p id="magicCount">Magic Points: 0</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>This is just a test and example website built using HTML, CSS, and JavaScript.</p>
+</footer>
+
+<script>
+/* =========================
+   JAVASCRIPT INTERACTIVITY
+========================= */
+
+function showMessage() {
+    const message = document.getElementById("message");
+    message.classList.remove("hidden");
+    message.textContent = "Welcome to this fairytale test site! This is only a demo project.";
+}
+
+function changeScene(scene) {
+    const sceneText = document.getElementById("sceneText");
+
+    if (scene === "swamp") {
+        sceneText.textContent = "You are standing in a mysterious swamp...";
+    } else if (scene === "castle") {
+        sceneText.textContent = "You arrive at a grand castle on the hill!";
+    } else if (scene === "bakery") {
+        sceneText.textContent = "You walk into a magical bakery filled with gingerbread!";
+    }
+}
+
+let magic = 0;
+
+function increaseMagic() {
+    magic++;
+    document.getElementById("magicCount").textContent = 
+        "Magic Points: " + magic;
+}
+</script>
+
+</body>
+</html>
